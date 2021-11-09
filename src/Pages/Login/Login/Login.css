@@ -1,0 +1,14 @@
+.form-area {
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+.google-btn {
+  background-color: #db3236;
+  border: 1px solid #db3236;
+  color: white;
+}
+.google-btn:hover {
+  background-color: white;
+  color: #db3236;
+  border: 1px solid #db3236;
+}
