@@ -5,17 +5,33 @@ const AddProducts = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
     console.log('~ data', data);
     // posting data
+    fetch('http://localhost:5000/allWatches', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.insertedId) {
+          alert('Posted successfully');
+          reset();
+        }
+        console.log(result);
+      });
   };
   return (
     <div>
       <div
-        style={{ background: '#FFFFF', boxShadow: '0 0 5px 0 gray' }}
-        className="d-block w-100"
+        style={{ background: '#FFFFF', boxShadow: '0 0 1px 0 gray' }}
+        className="d-block p-1 mb-3"
       >
         <h5 className="p-3 text-center fw-bold">Add Products</h5>
       </div>
@@ -60,6 +76,13 @@ const AddProducts = () => {
           className=" form-control "
           placeholder="watchImg"
           {...register('watchImg', { required: true })}
+        />
+        <br />
+        <input
+          type="text"
+          className=" form-control "
+          placeholder="Availablity"
+          {...register('availability', { required: true })}
         />
         <br />
         <textarea

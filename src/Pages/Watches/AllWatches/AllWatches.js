@@ -6,7 +6,7 @@ const AllWatches = () => {
   const [watches, setWatches] = useState([]);
 
   useEffect(() => {
-    fetch('/watchCollection.json')
+    fetch('http://localhost:5000/allWatches')
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
