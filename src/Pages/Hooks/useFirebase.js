@@ -6,6 +6,8 @@ import {
   GoogleAuthProvider,
   signOut,
   onAuthStateChanged,
+  createUserWithEmailAndPassword,
+  updateProfile,
 } from 'firebase/auth';
 
 initializeFirebase();
@@ -31,6 +33,37 @@ const useFirebase = () => {
         setAuthError(error.message);
       })
       .finally(() => setIsLoading(false));
+  };
+
+  // Register new user
+
+  const registerNewUser = (name, email, password) => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        // Signed in
+        const newUser = { email, displayName: name };
+        // Signed in
+        setUser(newUser);
+        //Auth Erros
+        setAuthError('');
+        // send name to firebase after creation
+        updateProfile(auth.currentUser, {
+          displayName: name,
+        })
+          .then(() => {
+            // Profile updated!
+          })
+          .catch((error) => {
+            // An error occurred
+          });
+        if (result) {
+          alert('Registration Successfull');
+        }
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setAuthError(errorMessage);
+      });
   };
 
   // watching user behavior
@@ -67,6 +100,7 @@ const useFirebase = () => {
     isLoading,
     signWithGoogle,
     userLogOut,
+    registerNewUser,
   };
 };
 
