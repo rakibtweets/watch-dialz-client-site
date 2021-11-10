@@ -17,7 +17,7 @@ const Navigation = () => {
         variant="light"
       >
         <Container fluid>
-          <Nav.Link as={Link} to="/home" className="fw-bold h4">
+        <Nav.Link as={Link} to="/home" className="fw-bold h4">
             DialZ
           </Nav.Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -40,6 +40,9 @@ const Navigation = () => {
 
               <Nav.Link as={Link} to="/Contact">
                 Contact
+              </Nav.Link>
+              <Nav.Link as={Link} to="/dashboard">
+                Dashboard
               </Nav.Link>
             </Nav>
 
