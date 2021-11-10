@@ -8,6 +8,8 @@ import AuthProvider from './Context/AuthProvider';
 import Watches from './Pages/Watches/Watches/Watches';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import AddProducts from './Pages/Dashboard/AddProducts/AddProducts';
+import WatchDetails from './Pages/Watches/WatchDetails/WatchDetails';
+import Booking from './Pages/Watches/Booking/Booking';
 
 function App() {
   return (
@@ -32,6 +34,12 @@ function App() {
             </Route>
             <Route path="/addProducts">
               <AddProducts />
+            </Route>
+            <Route path="/watch/:id">
+              <WatchDetails />
+            </Route>
+            <Route path="/booking/:id">
+              <Booking />
             </Route>
             <Route path="/register">
               <Register />
