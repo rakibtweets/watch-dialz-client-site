@@ -32,7 +32,7 @@ const DashboardSideApp = ({ url }) => {
                   Add Products
                 </Nav.Link>
                 <Nav.Link as={Link} to={`${url}`}>
-                  Manage Orders
+                  Manage All Orders
                 </Nav.Link>
                 <Nav.Link as={Link} to={`${url}/makeAdmin`}>
                   Make Admin

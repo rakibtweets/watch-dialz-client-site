@@ -28,7 +28,7 @@ const MyOrders = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`http://localhost:5000/deleteMyBooking/${id}`, {
+        fetch(`http://localhost:5000/deleteOrders/${id}`, {
           method: 'DELETE',
           headers: {
             'content-type': 'application/json',
@@ -65,7 +65,6 @@ const MyOrders = () => {
               <th>Address</th>
               <th>Watch Model</th>
               <th>Booking Date</th>
-
               <th>Cost</th>
               <th>Status</th>
             </tr>
