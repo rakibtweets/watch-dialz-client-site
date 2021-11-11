@@ -8,6 +8,7 @@ import {
   onAuthStateChanged,
   createUserWithEmailAndPassword,
   updateProfile,
+  signInWithEmailAndPassword,
 } from 'firebase/auth';
 
 initializeFirebase();
@@ -75,6 +76,27 @@ const useFirebase = () => {
       });
   };
 
+  // login existing user
+
+  const loginUser = (email, password, location, history) => {
+    setIsLoading(true);
+    signInWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        // redirect location
+        const redirectUrl = location?.state?.from || '/home';
+        history.push(redirectUrl);
+        // Signed in
+        setUser(result.user);
+
+        setAuthError('');
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setAuthError(errorMessage);
+      })
+      .finally(() => setIsLoading(false));
+  };
+
   // watching user behavior
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -133,6 +155,7 @@ const useFirebase = () => {
     signWithGoogle,
     userLogOut,
     registerNewUser,
+    loginUser,
   };
 };
 

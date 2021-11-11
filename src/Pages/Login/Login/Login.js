@@ -8,7 +8,7 @@ import { useHistory, useLocation } from 'react-router';
 const Login = () => {
   const location = useLocation();
   const history = useHistory();
-  const { signWithGoogle } = useAuth();
+  const { signWithGoogle, loginUser } = useAuth();
 
   const handleGoogleSignIn = () => {
     signWithGoogle(location, history);
@@ -20,7 +20,8 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    const { email, password } = data;
+    loginUser(email, password, location, history);
   };
   console.log(errors);
   return (

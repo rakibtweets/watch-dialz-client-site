@@ -17,7 +17,7 @@ const Navigation = () => {
         variant="light"
       >
         <Container fluid>
-        <Nav.Link as={Link} to="/home" className="fw-bold h4">
+          <Nav.Link as={Link} to="/home" className="fw-bold h4">
             DialZ
           </Nav.Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -60,10 +60,9 @@ const Navigation = () => {
                 <Nav.Link className="text-secondary">
                   {user?.displayName}
                 </Nav.Link>
-
                 <Nav.Link
                   onClick={userLogOut}
-                  className="bg-danger text-white rounded-pill px-4"
+                  className="bg-danger text-white rounded-pill px-3"
                 >
                   Log Out
                 </Nav.Link>
