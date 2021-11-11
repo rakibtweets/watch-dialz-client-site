@@ -8,6 +8,8 @@ import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import MyOrders from '../MyOrders/MyOrders';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 import useAuth from '../../Hooks/useAuth';
+import UserReviews from '../UserReviews/UserReviews';
+import Payment from '../PayMent/Payment';
 
 const Dashboard = () => {
   const { admin } = useAuth();
@@ -37,6 +39,12 @@ const Dashboard = () => {
             </AdminRoute>
             <Route path={`${path}/myOrders`}>
               <MyOrders />
+            </Route>
+            <Route path={`${path}/review`}>
+              <UserReviews />
+            </Route>
+            <Route path={`${path}/payment`}>
+              <Payment />
             </Route>
           </Switch>
         </Col>
