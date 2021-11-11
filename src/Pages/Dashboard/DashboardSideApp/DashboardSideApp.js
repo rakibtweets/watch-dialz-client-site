@@ -25,6 +25,9 @@ const DashboardSideApp = ({ url }) => {
 
             <Drawer.Nav>
               <Nav className=" d-flex flex-column justify-content-center ">
+                <Nav.Link as={Link} to={`${url}/myOrders`}>
+                  My Orders
+                </Nav.Link>
                 <Nav.Link as={Link} to={`${url}/addProducts`}>
                   Add Products
                 </Nav.Link>

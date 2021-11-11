@@ -5,6 +5,7 @@ import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddProducts from '../AddProducts/AddProducts';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
+import MyOrders from '../MyOrders/MyOrders';
 
 const Dashboard = () => {
   let { path, url } = useRouteMatch();
@@ -24,6 +25,9 @@ const Dashboard = () => {
             </Route>
             <Route path={`${path}/addProducts`}>
               <AddProducts />
+            </Route>
+            <Route path={`${path}/myOrders`}>
+              <MyOrders />
             </Route>
           </Switch>
         </Col>
