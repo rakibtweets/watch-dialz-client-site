@@ -6,8 +6,11 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddProducts from '../AddProducts/AddProducts';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import MyOrders from '../MyOrders/MyOrders';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import useAuth from '../../Hooks/useAuth';
 
 const Dashboard = () => {
+  const { admin } = useAuth();
   let { path, url } = useRouteMatch();
   return (
     <Container fluid>
@@ -17,15 +20,21 @@ const Dashboard = () => {
         </Col>
         <Col sm={12} md={9} lg={9}>
           <Switch>
-            <Route path={`${path}/makeAdmin`}>
+            <AdminRoute path={`${path}/makeAdmin`}>
               <MakeAdmin />
-            </Route>
-            <Route exact path={`${path}`}>
-              <ManageAllOrders />
-            </Route>
-            <Route path={`${path}/addProducts`}>
+            </AdminRoute>
+            {admin ? (
+              <Route exact path={`${path}`}>
+                <ManageAllOrders />
+              </Route>
+            ) : (
+              <Route exact path={`${path}`}>
+                <MyOrders />
+              </Route>
+            )}
+            <AdminRoute path={`${path}/addProducts`}>
               <AddProducts />
-            </Route>
+            </AdminRoute>
             <Route path={`${path}/myOrders`}>
               <MyOrders />
             </Route>

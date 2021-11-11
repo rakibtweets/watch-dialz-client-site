@@ -34,19 +34,19 @@ const Login = () => {
           onSubmit={handleSubmit(onSubmit)}
         >
           <h2 className="text-center">Login</h2>
-          <input
-            type="text"
-            placeholder="Your name"
-            className="form-control form-control-lg  form-control-md "
-            {...register('name', { required: true, maxLength: 80 })}
-          />
-          <br />
 
           <input
             type="email"
             placeholder="Email"
             className="form-control form-control-lg  form-control-md"
             {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
+          />
+          <br />
+          <input
+            type="password"
+            placeholder="Enter Password"
+            className="form-control form-control-lg  form-control-md "
+            {...register('password', { required: true, maxLength: 80 })}
           />
           <br />
 

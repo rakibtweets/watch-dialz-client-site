@@ -52,6 +52,7 @@ const useFirebase = () => {
 
         // save user to database
         saveUser(email, name, 'POST');
+        history.push('/home');
         //Auth Erros
         setAuthError('');
         // send name to firebase after creation
@@ -72,7 +73,6 @@ const useFirebase = () => {
         const errorMessage = error.message;
         setAuthError(errorMessage);
       });
-    history.push('/home');
   };
 
   // watching user behavior
