@@ -1,11 +1,13 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router';
 import useAuth from '../../Hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
 import './Register.css';
 
 const Register = () => {
   const { signWithGoogle, registerNewUser } = useAuth();
+  const history = useHistory();
   const {
     register,
     handleSubmit,
@@ -18,7 +20,7 @@ const Register = () => {
       alert('Password does not match');
       return;
     }
-    registerNewUser(name, email, password);
+    registerNewUser(name, email, password, history);
   };
   console.log(errors);
   return (

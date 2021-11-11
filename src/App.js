@@ -10,6 +10,7 @@ import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import AddProducts from './Pages/Dashboard/AddProducts/AddProducts';
 import WatchDetails from './Pages/Watches/WatchDetails/WatchDetails';
 import Booking from './Pages/Watches/Booking/Booking';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -26,9 +27,9 @@ function App() {
             <Route path="/watches">
               <Watches />
             </Route>
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard />
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login />
             </Route>
@@ -38,9 +39,9 @@ function App() {
             <Route path="/watch/:id">
               <WatchDetails />
             </Route>
-            <Route path="/booking/:id">
+            <PrivateRoute path="/booking/:id">
               <Booking />
-            </Route>
+            </PrivateRoute>
             <Route path="/register">
               <Register />
             </Route>

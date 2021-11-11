@@ -3,9 +3,17 @@ import './Login.css';
 import { useForm } from 'react-hook-form';
 import Navigation from '../../Shared/Navigation/Navigation';
 import useAuth from '../../Hooks/useAuth';
+import { useHistory, useLocation } from 'react-router';
 
 const Login = () => {
+  const location = useLocation();
+  const history = useHistory();
   const { signWithGoogle } = useAuth();
+
+  const handleGoogleSignIn = () => {
+    signWithGoogle(location, history);
+  };
+
   const {
     register,
     handleSubmit,
@@ -48,7 +56,7 @@ const Login = () => {
         </form>
         <div className="media-login  d-block d-flex flex-column mx-auto px-5 w-75 ">
           <h4 className="text-center">Or</h4>
-          <button onClick={signWithGoogle} className="btn google-btn py-2">
+          <button onClick={handleGoogleSignIn} className="btn google-btn py-2">
             Login With Google
           </button>
         </div>

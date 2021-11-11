@@ -3,9 +3,11 @@ import { Collapse, Nav } from 'react-bootstrap';
 import { Drawer } from 'react-bootstrap-drawer';
 import 'react-bootstrap-drawer/lib/style.css';
 import { Link } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
 
 const DashboardSideApp = ({ url }) => {
   const [open, setOpen] = useState(false);
+  const { admin } = useAuth();
 
   const handleToggle = () => setOpen(!open);
 
@@ -28,15 +30,21 @@ const DashboardSideApp = ({ url }) => {
                 <Nav.Link as={Link} to={`${url}/myOrders`}>
                   My Orders
                 </Nav.Link>
-                <Nav.Link as={Link} to={`${url}/addProducts`}>
-                  Add Products
-                </Nav.Link>
-                <Nav.Link as={Link} to={`${url}`}>
-                  Manage All Orders
-                </Nav.Link>
-                <Nav.Link as={Link} to={`${url}/makeAdmin`}>
-                  Make Admin
-                </Nav.Link>
+                {admin && (
+                  <Nav.Link as={Link} to={`${url}/addProducts`}>
+                    Add Products
+                  </Nav.Link>
+                )}
+                {admin && (
+                  <Nav.Link as={Link} to={`${url}`}>
+                    Manage All Orders
+                  </Nav.Link>
+                )}
+                {admin && (
+                  <Nav.Link as={Link} to={`${url}/makeAdmin`}>
+                    Make Admin
+                  </Nav.Link>
+                )}
               </Nav>
             </Drawer.Nav>
           </Drawer.ToC>
