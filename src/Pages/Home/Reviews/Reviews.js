@@ -13,8 +13,10 @@ const Reviews = () => {
       });
   }, []);
   return (
-    <div>
-      <h3 className="my-5 text-center">Users Review</h3>
+    <div className="mt-5">
+      <h3 className="pt-5 text-center mb-5 fw-bold">
+        Customer <span className="text-info">Review</span>{' '}
+      </h3>
 
       {/* carousel start */}
       <div className="single-reviewer container">

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Spinner } from 'react-bootstrap';
-import Watch from '../Watch/Watch';
+import Watch from '../../Watches/Watch/Watch';
 
-const AllWatches = () => {
+const FeaturedWatches = () => {
   const [watches, setWatches] = useState([]);
   const [isloading, setIsloading] = useState(true);
 
@@ -17,16 +17,16 @@ const AllWatches = () => {
   }, [isloading]);
   return (
     <>
-      <div className="text-center">
+      <div className="text-center my-5">
         {isloading ? (
           <Spinner className="mt-3" animation="border" variant="danger" />
         ) : (
           <Container>
-            <h4 className=" text-center p-3 fw-bold">
-              Explore Our <span className="text-info">Watch</span>
-            </h4>
-            <Row xs={1} md={2} lg={3} className="gx-4 gy-5">
-              {watches.map((watch) => (
+            <h3 className="text-center fw-bold my-5">
+              Featured <span className="text-info">Watches</span>
+            </h3>
+            <Row xs={1} md={2} lg={3} className="g-3">
+              {watches.slice(0, 6).map((watch) => (
                 <Watch key={watch.modelName} watch={watch} />
               ))}
             </Row>
@@ -37,4 +37,4 @@ const AllWatches = () => {
   );
 };
 
-export default AllWatches;
+export default FeaturedWatches;
