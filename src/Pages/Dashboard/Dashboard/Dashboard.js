@@ -10,6 +10,7 @@ import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 import useAuth from '../../Hooks/useAuth';
 import UserReviews from '../UserReviews/UserReviews';
 import Payment from '../PayMent/Payment';
+import ManageProducts from '../ManageProducts/ManageProducts';
 
 const Dashboard = () => {
   const { admin } = useAuth();
@@ -36,6 +37,9 @@ const Dashboard = () => {
             )}
             <AdminRoute path={`${path}/addProducts`}>
               <AddProducts />
+            </AdminRoute>
+            <AdminRoute path={`${path}/manageProducts`}>
+              <ManageProducts />
             </AdminRoute>
             <Route path={`${path}/myOrders`}>
               <MyOrders />

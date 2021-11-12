@@ -47,6 +47,9 @@ const DashboardSideApp = ({ url }) => {
                   <Nav.Link as={Link} to={`${url}`}>
                     Manage All Orders
                   </Nav.Link>
+                  <Nav.Link as={Link} to={`${url}/manageProducts`}>
+                    Manage Products
+                  </Nav.Link>
 
                   <Nav.Link as={Link} to={`${url}/makeAdmin`}>
                     Make Admin
