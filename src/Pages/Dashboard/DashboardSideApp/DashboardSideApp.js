@@ -27,18 +27,19 @@ const DashboardSideApp = ({ url }) => {
             </Nav.Link>
 
             <Drawer.Nav>
-              <Nav className=" user__dashboard d-flex flex-column justify-content-center fw-bold">
-                <Nav.Link as={Link} to={`${url}/myOrders`}>
-                  My Orders
-                </Nav.Link>
-                <Nav.Link as={Link} to={`${url}/review`}>
-                  Review
-                </Nav.Link>
-                <Nav.Link as={Link} to={`${url}/payment`}>
-                  Payment
-                </Nav.Link>
-              </Nav>
-              {admin && (
+              {!admin ? (
+                <Nav className=" user__dashboard d-flex flex-column justify-content-center fw-bold">
+                  <Nav.Link as={Link} to={`${url}/myOrders`}>
+                    My Orders
+                  </Nav.Link>
+                  <Nav.Link as={Link} to={`${url}/review`}>
+                    Review
+                  </Nav.Link>
+                  <Nav.Link as={Link} to={`${url}/payment`}>
+                    Payment
+                  </Nav.Link>
+                </Nav>
+              ) : (
                 <Nav className="admin__dashboard d-flex flex-column justify-content-center fw-bold">
                   <Nav.Link as={Link} to={`${url}/addProducts`}>
                     Add Products

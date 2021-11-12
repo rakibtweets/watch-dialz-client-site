@@ -39,7 +39,11 @@ const ManageProducts = () => {
                 (orderList) => orderList?._id !== id
               );
               setWatches(remainingProduct);
-              swal('Deleted Successfully!', 'Product has been deleted', 'success');
+              swal(
+                'Deleted Successfully!',
+                'Product has been deleted',
+                'success'
+              );
             }
           });
       }
@@ -60,8 +64,8 @@ const ManageProducts = () => {
         {isloading ? (
           <Spinner className="mt-3" animation="border" variant="danger" />
         ) : (
-          <Container>
-            <Row xs={1} md={2} lg={3} className="gx-4 gy-5">
+          <Container className="mb-5">
+            <Row xs={1} md={2} lg={3} className="gx-3 gy-4">
               {watches.map((watch) => (
                 <Col key={watch._id} className=" d-block d-lg-flex">
                   <Card className="watch-card">

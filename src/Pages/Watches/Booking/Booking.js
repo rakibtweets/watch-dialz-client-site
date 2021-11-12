@@ -45,7 +45,7 @@ const Booking = () => {
 
   return (
     <div>
-      <h2 className=" text-center text-info fw-bold my-5">Order Watch</h2>
+      <h2 className=" text-center text-info fw-bold my-3">Order Watch</h2>
       <Container>
         <Row>
           <Col lg={6} className="destination-info">

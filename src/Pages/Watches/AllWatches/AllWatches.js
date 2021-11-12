@@ -20,7 +20,7 @@ const AllWatches = () => {
         {isloading ? (
           <Spinner className="mt-3" animation="border" variant="danger" />
         ) : (
-          <Container>
+          <Container className="mb-5">
             <h4 className=" text-center p-3 fw-bold">
               Explore Our <span className="text-info">Watch</span>
             </h4>

@@ -9,8 +9,10 @@ import Watches from './Pages/Watches/Watches/Watches';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import AddProducts from './Pages/Dashboard/AddProducts/AddProducts';
 import WatchDetails from './Pages/Watches/WatchDetails/WatchDetails';
-import Booking from './Pages/Watches/Booking/Booking';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import OrderProducts from './Pages/OrderProducts/OrderProducts';
+import Contact from './Pages/Contact/Contact';
+import Navigation from './Pages/Shared/Navigation/Navigation';
 
 function App() {
   return (
@@ -27,6 +29,10 @@ function App() {
             <Route path="/watches">
               <Watches />
             </Route>
+            <Route path="/contact">
+              <Navigation />
+              <Contact />
+            </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard />
             </PrivateRoute>
@@ -40,7 +46,7 @@ function App() {
               <WatchDetails />
             </Route>
             <PrivateRoute path="/booking/:id">
-              <Booking />
+              <OrderProducts />
             </PrivateRoute>
             <Route path="/register">
               <Register />

@@ -43,10 +43,7 @@ const HomeBanner = () => {
               </p>
               <div>
                 <p className="fs-6" style={{ color: '#aaaaaa' }}>
-                  Starting @
-                  <span class="price_tag" style={{ color: '#cca471' }}>
-                    $ 250.00
-                  </span>
+                  Starting @<span style={{ color: '#cca471' }}>$ 250.00</span>
                 </p>
               </div>
               <Link to="watches">
@@ -75,10 +72,7 @@ const HomeBanner = () => {
               </p>
               <div>
                 <p className="fs-6" style={{ color: '#aaaaaa' }}>
-                  Starting @
-                  <span class="price_tag" style={{ color: '#cca471' }}>
-                    $ 250.00
-                  </span>
+                  Starting @<span style={{ color: '#cca471' }}>$ 250.00</span>
                 </p>
               </div>
               <Link to="watches">

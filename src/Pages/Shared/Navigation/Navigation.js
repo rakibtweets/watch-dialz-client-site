@@ -3,6 +3,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import './Navigation.css';
+import UserAvatar from 'react-user-avatar';
 
 const Navigation = () => {
   const { user, userLogOut } = useAuth();
@@ -12,17 +13,18 @@ const Navigation = () => {
         collapseOnSelect
         expand="lg"
         sticky="top"
-        className="py-3 px-3"
+        className="py-2 px-3"
         bg="light"
         variant="light"
       >
         <Container fluid>
-          <Nav.Link as={Link} to="/home" className="fw-bold h4">
-            DialZ
+          <Nav.Link as={Link} to="/home" className="fw-bolder h5">
+            <span className="text-black">Watch</span>
+            <span className="text-info">Dialz</span>
           </Nav.Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mx-lg-auto text-center ">
+            <Nav className="mx-lg-auto text-center px-2">
               <Nav.Link as={Link} to="/home">
                 Home
               </Nav.Link>
@@ -38,7 +40,7 @@ const Navigation = () => {
                 About
               </Nav.Link>
 
-              <Nav.Link as={Link} to="/Contact">
+              <Nav.Link as={Link} to="/contact">
                 Contact
               </Nav.Link>
               <Nav.Link as={Link} to="/dashboard">
@@ -51,20 +53,31 @@ const Navigation = () => {
                 <Nav.Link as={Link} to="/login">
                   Login
                 </Nav.Link>
-                <Nav.Link as={Link} to="/register">
+                <Nav.Link
+                  className="btn btn-info text-white rounded-pill px-3 py-2"
+                  as={Link}
+                  to="/register"
+                >
                   Register
                 </Nav.Link>
               </Nav>
             ) : (
-              <Nav className="text-center">
-                <Nav.Link className="text-secondary fw-bold">
-                  {user?.displayName}
+              <Nav className="text-center d-lg-flex align-items-lg-center">
+                <Nav.Link className="text-secondary fw-bold mx-2">
+                  {user?.displayName}{' '}
                 </Nav.Link>
-                <Nav.Link
-                  onClick={userLogOut}
-                  className="bg-danger text-white rounded-pill px-3"
-                >
-                  Log Out
+                <UserAvatar
+                  className="text-white mx-auto"
+                  size="50"
+                  name={user?.displayName}
+                />
+                <Nav.Link>
+                  <button
+                    onClick={userLogOut}
+                    className="btn btn-danger text-white rounded-pill px-3 py-2"
+                  >
+                    Log Out
+                  </button>
                 </Nav.Link>
               </Nav>
             )}

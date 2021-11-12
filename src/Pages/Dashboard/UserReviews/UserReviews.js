@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Rating from 'react-rating';
+import swal from 'sweetalert';
 import useAuth from '../../Hooks/useAuth';
 
 const UserReviews = () => {
@@ -28,7 +29,7 @@ const UserReviews = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {
-          alert('Your review submitted');
+          swal('Submmited', 'Reviewed Successfully', 'success');
           reset();
         }
       });

@@ -20,7 +20,7 @@ const SingleReview = (props) => {
           <Card.Title className="fw-bold text-center pb-2">
             {userReview}
           </Card.Title>
-          <Card.Text className="text-center">
+          <div className="text-center">
             <Rating
               initialRating={rating}
               emptySymbol="far fa-star text-warning fs-4"
@@ -28,7 +28,7 @@ const SingleReview = (props) => {
               readonly
             />
             <p className="py-2">{reviweText}</p>
-          </Card.Text>
+          </div>
         </Card.Body>
       </Card>
     </div>

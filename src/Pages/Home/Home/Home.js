@@ -1,4 +1,5 @@
 import React from 'react';
+import Contact from '../../Contact/Contact';
 import Navigation from '../../Shared/Navigation/Navigation';
 import FeaturedWatches from '../FeaturedWatches/FeaturedWatches';
 import HomeBanner from '../HomeBanner/HomeBanner';
@@ -11,6 +12,7 @@ const Home = () => {
       <HomeBanner />
       <FeaturedWatches />
       <Reviews />
+      <Contact />
     </div>
   );
 };

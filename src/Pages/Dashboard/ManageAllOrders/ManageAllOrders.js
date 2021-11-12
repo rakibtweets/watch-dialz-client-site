@@ -10,7 +10,6 @@ const ManageAllOrders = () => {
     fetch('http://localhost:5000/manageAllOrders')
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setManageOrders(data);
       });
   }, [isUpdated]);
