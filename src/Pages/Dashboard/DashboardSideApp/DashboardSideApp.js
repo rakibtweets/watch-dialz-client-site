@@ -4,6 +4,7 @@ import { Drawer } from 'react-bootstrap-drawer';
 import 'react-bootstrap-drawer/lib/style.css';
 import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
+import './DashboardSideApp.css';
 
 const DashboardSideApp = ({ url }) => {
   const [open, setOpen] = useState(false);
@@ -14,19 +15,19 @@ const DashboardSideApp = ({ url }) => {
   return (
     <Drawer>
       <div className=" d-flex justify-content-between align-content-center">
-        <h5 className=" pt-3">Dashboard</h5>
+        <h5 className="pt-4 text-info fw-bold">Dashboard</h5>
         <Drawer.Toggle onClick={handleToggle} />
       </div>
 
       <Collapse in={open}>
         <Drawer.Overflow>
-          <Drawer.ToC>
+          <Drawer.ToC className="dashboard-drawer fw-bold">
             <Nav.Link as={Link} to="/watches">
               Watches
             </Nav.Link>
 
             <Drawer.Nav>
-              <Nav className=" user__dashboard d-flex flex-column justify-content-center ">
+              <Nav className=" user__dashboard d-flex flex-column justify-content-center fw-bold">
                 <Nav.Link as={Link} to={`${url}/myOrders`}>
                   My Orders
                 </Nav.Link>
@@ -38,7 +39,7 @@ const DashboardSideApp = ({ url }) => {
                 </Nav.Link>
               </Nav>
               {admin && (
-                <Nav className="admin__dashboard d-flex flex-column justify-content-center ">
+                <Nav className="admin__dashboard d-flex flex-column justify-content-center fw-bold">
                   <Nav.Link as={Link} to={`${url}/addProducts`}>
                     Add Products
                   </Nav.Link>

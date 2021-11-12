@@ -57,7 +57,7 @@ const Navigation = () => {
               </Nav>
             ) : (
               <Nav className="text-center">
-                <Nav.Link className="text-secondary">
+                <Nav.Link className="text-secondary fw-bold">
                   {user?.displayName}
                 </Nav.Link>
                 <Nav.Link

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Spinner } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Watch from '../../Watches/Watch/Watch';
 
 const FeaturedWatches = () => {
@@ -27,9 +28,16 @@ const FeaturedWatches = () => {
             </h3>
             <Row xs={1} md={2} lg={3} className="g-3">
               {watches.slice(0, 6).map((watch) => (
-                <Watch key={watch.modelName} watch={watch} />
+                <Watch key={watch._id} watch={watch} />
               ))}
             </Row>
+            <div className="mt-4">
+              <Link to="/watches">
+                <button className="px-4 my-3 btn btn-outline-success rounded-pill">
+                  Explore more watches
+                </button>
+              </Link>
+            </div>
           </Container>
         )}
       </div>

@@ -32,17 +32,22 @@ const MakeAdmin = () => {
   return (
     <>
       <div
-        style={{ background: '#FFFFF', boxShadow: '0 0 5px 0 gray' }}
-        className="d-block w-100"
+        style={{
+          background: '#FFFFF',
+          boxShadow: '0 0 5px 0 gray',
+          marginBottom: '4em',
+        }}
       >
-        <h5 className="p-3 text-center fw-bold">Make Admin</h5>
+        <h4 className="fw-bold text-center py-4">
+          Make <span className="text-info">Admin</span>{' '}
+        </h4>
       </div>
-
       <form onSubmit={handleAdminSubmit}>
         <InputGroup className="mb-3 w-75 mx-auto">
           <FormControl
             placeholder="Enter Email "
             aria-label="Enter Email"
+            className=" form-control form-control-md form-control-lg"
             aria-describedby="basic-addon2"
             onBlur={handleOnBlur}
           />

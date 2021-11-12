@@ -10,7 +10,6 @@ const AllWatches = () => {
     fetch('http://localhost:5000/allWatches')
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
         setWatches(data);
         setIsloading(false);
       });
@@ -27,7 +26,7 @@ const AllWatches = () => {
             </h4>
             <Row xs={1} md={2} lg={3} className="gx-4 gy-5">
               {watches.map((watch) => (
-                <Watch key={watch.modelName} watch={watch} />
+                <Watch key={watch._id} watch={watch} />
               ))}
             </Row>
           </Container>

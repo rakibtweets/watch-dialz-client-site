@@ -71,9 +71,11 @@ const ManageAllOrders = () => {
     <>
       <div
         style={{ background: '#FFFFF', boxShadow: '0 0 5px 0 gray' }}
-        className="d-block w-100"
+        className="d-block w-100 mb-5"
       >
-        <h5 className="p-3 text-center fw-bold">Manage All Orders</h5>
+        <h5 className="py-4 text-center fw-bold">
+          Manage <span className="text-info">All Orders</span>{' '}
+        </h5>
       </div>
       <Container fluid>
         <Table striped bordered hover responsive variant="light">
@@ -105,7 +107,7 @@ const ManageAllOrders = () => {
                     <p
                       className={
                         orders?.status === 'Pending'
-                          ? 'text-danger'
+                          ? 'text-danger fw-bold'
                           : 'text-success fw-bold'
                       }
                     >

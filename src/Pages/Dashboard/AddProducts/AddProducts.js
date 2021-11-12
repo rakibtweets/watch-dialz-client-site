@@ -30,18 +30,25 @@ const AddProducts = () => {
   return (
     <div>
       <div
-        style={{ background: '#FFFFF', boxShadow: '0 0 1px 0 gray' }}
-        className="d-block p-1 mb-3"
+        style={{
+          background: '#FFFFF',
+          boxShadow: '0 0 5px 0 gray',
+          marginBottom: '4em',
+        }}
       >
-        <h5 className="p-3 text-center fw-bold">Add Products</h5>
+        <h4 className="fw-bold text-center py-4">
+          Add <span className="text-info">Product</span>{' '}
+        </h4>
       </div>
 
       {/* Add Product Form */}
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" w-75 mx-auto px-3 px-lg-5 bg-dark p-4"
+        className=" w-75 mx-auto px-3 px-lg-5 bg-light p-4"
       >
-        <h2 className=" text-center text-white py-2 fw-bold">Add Product</h2>
+        <h4 className=" text-center  py-3 fw-bold">
+          product <span className="text-info">Details</span>
+        </h4>
         <input
           type="text"
           className=" form-control "

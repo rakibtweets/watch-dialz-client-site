@@ -9,7 +9,6 @@ const Reviews = () => {
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
-        console.log(data);
       });
   }, []);
   return (
@@ -24,7 +23,7 @@ const Reviews = () => {
           {reviews.map((review) => (
             <Carousel.Item className="px-2">
               {' '}
-              <SingleReview key={review.id} review={review} />
+              <SingleReview key={review._id} review={review} />
             </Carousel.Item>
           ))}
         </Carousel>

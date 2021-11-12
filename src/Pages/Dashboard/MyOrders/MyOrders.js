@@ -41,7 +41,7 @@ const MyOrders = () => {
                 (bookList) => bookList?._id !== id
               );
               setMyOrders(remainingData);
-              swal('Deleted Successfully!', 'Your booking canceld', 'success');
+              swal('Deleted Successfully!', 'Your Order cancel', 'success');
             }
           });
       }
@@ -49,8 +49,12 @@ const MyOrders = () => {
   };
 
   return (
-    <div className="mb-5">
-      <h2 className="fw-bold text-center text-success mt-3 mb-3">My Oders</h2>
+    <div className="">
+      <div style={{ background: '#FFFFF', boxShadow: '0 0 5px 0 gray' }}>
+        <h4 className="fw-bold text-center py-4">
+          My <span className="text-info">Orders</span>{' '}
+        </h4>
+      </div>
       <h4 className="fw-bold text-center text-success my-3">
         Total Order: {myOders.length}
       </h4>
@@ -84,7 +88,7 @@ const MyOrders = () => {
                     <p
                       className={
                         myOder?.status === 'Pending'
-                          ? 'text-danger'
+                          ? 'text-danger fw-bold'
                           : 'text-success fw-bold'
                       }
                     >

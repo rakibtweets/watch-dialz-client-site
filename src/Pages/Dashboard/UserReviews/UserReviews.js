@@ -36,8 +36,12 @@ const UserReviews = () => {
 
   return (
     <div>
-      <h3 className=" fw-bold text-center mt-5">User Reviews</h3>
-      <div className="review__container">
+      <div style={{ background: '#FFFFF', boxShadow: '0 0 5px 0 gray' }}>
+        <h4 className="fw-bold text-center py-4">
+          Your <span className="text-info">Reviews</span>{' '}
+        </h4>
+      </div>
+      <div className="review__container mt-5">
         {user.email && (
           <form className="w-75" onSubmit={handleSubmit(onSubmit)}>
             <input
@@ -53,7 +57,10 @@ const UserReviews = () => {
             />
             <br />
             <div className="d-flex justify-content-start align-items-center gap-3">
-              <label className="text-bold" htmlFor="rating">
+              <label
+                className="text-bold h5 fw-bold text-info"
+                htmlFor="rating"
+              >
                 Rating:
               </label>
               <Rating
