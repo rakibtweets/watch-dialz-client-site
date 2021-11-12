@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Col, Container, Row } from 'react-bootstrap';
 import useAuth from '../../Hooks/useAuth';
 import { useParams } from 'react-router';
+import swal from 'sweetalert';
 
 const Booking = () => {
   const { user } = useAuth();
@@ -36,7 +37,7 @@ const Booking = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {
-          alert('Added to your order list');
+          swal('Congratulations!', 'You Order Successfully', 'success');
           reset();
         }
       });
@@ -44,26 +45,26 @@ const Booking = () => {
 
   return (
     <div>
-      <h3 className=" text-center text-success my-5">Booking</h3>
+      <h2 className=" text-center text-info fw-bold my-5">Order Watch</h2>
       <Container>
         <Row>
           <Col lg={6} className="destination-info">
-            <div className="destination-img pb-3">
+            <div className="destination-img ">
               <img className="img-fluid" src={watch?.watchImg} alt="" />
             </div>
-            <div className="destination-info">
-              <h5>Model Name: {watch?.modelName}</h5>
+            <div className="destination-info mt-4">
+              <h5 className="text-success fw-bold">{watch?.modelName}</h5>
 
-              <p className=" fw-bold">Total Costing: $ {watch?.pricing}</p>
-              <div className="shor-description">
+              <p className=" fw-bold h6">Price: $ {watch?.pricing}</p>
+              <div className="shor-description text-secondary small">
                 <p>{watch?.productDescription}</p>
               </div>
             </div>
           </Col>
-          <Col lg={6} className="booking-form">
+          <Col lg={6} className="order-form">
             {user.email && (
-              <form onSubmit={handleSubmit(onSubmit)} className="bg-dark p-4">
-                <h4 className=" text-center text-white mb-3">Booking Form</h4>
+              <form onSubmit={handleSubmit(onSubmit)} className="bg-light p-4">
+                <h4 className=" text-center fw-bold my-3">Order Form</h4>
                 <input
                   className=" form-control"
                   defaultValue={user?.displayName}

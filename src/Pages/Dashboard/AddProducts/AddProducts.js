@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import swal from 'sweetalert';
 
 const AddProducts = () => {
   const {
@@ -21,7 +22,7 @@ const AddProducts = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {
-          alert('Posted successfully');
+          swal('Product Added', '', 'success');
           reset();
         }
         console.log(result);

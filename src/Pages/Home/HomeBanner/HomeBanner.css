@@ -1,0 +1,45 @@
+.slide-1 {
+  background-image: url(https://cdn.shopify.com/s/files/1/0564/2705/3216/files/slider-1.jpg?v=1633414416);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+  visibility: inherit;
+  z-index: 20;
+}
+.slide-2 {
+  background-image: url(https://cdn.shopify.com/s/files/1/0075/1832/2770/files/slider__1_2000x.jpg?v=1559284541);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+  visibility: inherit;
+  z-index: 20;
+}
+.slide-3 {
+  background-image: url(https://cdn.shopify.com/s/files/1/0075/1832/2770/files/slider__2_2000x.jpg?v=1559288774);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+  visibility: inherit;
+  z-index: 20;
+}
+
+.slide-btn {
+  padding: 0.9em 2.5em;
+}
+
+.slide_content {
+  padding: 2em 1em;
+  background-color: rgba(0, 0, 0, 0.568);
+  visibility: visible;
+  opacity: 1;
+}
