@@ -43,9 +43,11 @@ const Navigation = () => {
               <Nav.Link as={Link} to="/contact">
                 Contact
               </Nav.Link>
-              <Nav.Link as={Link} to="/dashboard">
-                Dashboard
-              </Nav.Link>
+              {user.email && (
+                <Nav.Link as={Link} to="/dashboard">
+                  Dashboard
+                </Nav.Link>
+              )}
             </Nav>
 
             {!user?.email ? (

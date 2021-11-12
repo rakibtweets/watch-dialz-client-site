@@ -13,6 +13,7 @@ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import OrderProducts from './Pages/OrderProducts/OrderProducts';
 import Contact from './Pages/Contact/Contact';
 import Navigation from './Pages/Shared/Navigation/Navigation';
+import Footer from './Pages/Shared/Footer/Footer';
 
 function App() {
   return (
@@ -22,16 +23,20 @@ function App() {
           <Switch>
             <Route exact path="/">
               <Home />
+              <Footer />
             </Route>
             <Route path="/home">
               <Home />
+              <Footer />
             </Route>
             <Route path="/watches">
               <Watches />
+              <Footer />
             </Route>
             <Route path="/contact">
               <Navigation />
               <Contact />
+              <Footer />
             </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard />
@@ -47,6 +52,7 @@ function App() {
             </Route>
             <PrivateRoute path="/booking/:id">
               <OrderProducts />
+              <Footer />
             </PrivateRoute>
             <Route path="/register">
               <Register />

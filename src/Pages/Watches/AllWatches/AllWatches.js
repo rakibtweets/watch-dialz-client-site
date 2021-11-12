@@ -16,11 +16,11 @@ const AllWatches = () => {
   }, [isloading]);
   return (
     <>
-      <div className="text-center">
+      <div className="text-center mb-5">
         {isloading ? (
           <Spinner className="mt-3" animation="border" variant="danger" />
         ) : (
-          <Container className="mb-5">
+          <Container className="mb-5 mb-5">
             <h4 className=" text-center p-3 fw-bold">
               Explore Our <span className="text-info">Watch</span>
             </h4>
