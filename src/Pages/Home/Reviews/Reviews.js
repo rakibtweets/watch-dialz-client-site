@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Carousel from 'react-grid-carousel';
 import SingleReview from '../SingleReview/SingleReview';
+import Fade from 'react-reveal/Fade';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -13,9 +14,11 @@ const Reviews = () => {
   }, []);
   return (
     <div className="mt-5 mb-5">
-      <h3 className="pt-5 text-center mb-5 fw-bold">
-        Customer <span className="text-info">Reviews</span>{' '}
-      </h3>
+      <Fade bottom>
+        <h3 className="pt-5 text-center mb-5 fw-bold">
+          Customer <span className="text-info">Reviews</span>{' '}
+        </h3>
+      </Fade>
 
       {/* carousel start */}
       <div className="single-reviewer container">

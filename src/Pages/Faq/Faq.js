@@ -6,16 +6,16 @@ const Faq = () => {
   return (
     <>
       <Container className="pb-5">
-        <h3 className="text-center fw-bold my-4">
-          Faq <span className="text-info">Question</span>{' '}
-        </h3>
+        <Fade bottom>
+          <h3 className="text-center fw-bold my-4">
+            Faq <span className="text-info">Question</span>{' '}
+          </h3>
+        </Fade>
         <Accordion className=" w-75 mx-auto" defaultActiveKey="0">
           <Fade bottom cascade>
             <Accordion.Item eventKey="0">
               <Accordion.Header>
-                <span className="text-info fw-bold">
-                  When do I receive my order?
-                </span>
+                <span className="text-info">When do I receive my order?</span>
               </Accordion.Header>
               <Accordion.Body className="text-secondary">
                 When placing the order, a day of shipment is indicated. After
@@ -27,7 +27,7 @@ const Faq = () => {
             </Accordion.Item>
             <Accordion.Item eventKey="1">
               <Accordion.Header>
-                <span className="text-info fw-bold">
+                <span className="text-info">
                   I now see the longer delivery time of (a part of) my order.
                   How can I cancel it?
                 </span>
@@ -43,7 +43,7 @@ const Faq = () => {
             </Accordion.Item>
             <Accordion.Item eventKey="2">
               <Accordion.Header>
-                <span className="text-info fw-bold">
+                <span className="text-info">
                   When will I receive the invoice for my order?
                 </span>
               </Accordion.Header>
@@ -57,9 +57,7 @@ const Faq = () => {
             </Accordion.Item>
             <Accordion.Item eventKey="3">
               <Accordion.Header>
-                <span className="text-info fw-bold">
-                  When do I receive my order?
-                </span>
+                <span className="text-info ">When do I receive my order?</span>
               </Accordion.Header>
               <Accordion.Body className="text-secondary">
                 When placing the order, a day of shipment is indicated. After
@@ -71,9 +69,7 @@ const Faq = () => {
             </Accordion.Item>
             <Accordion.Item eventKey="4">
               <Accordion.Header>
-                <span className="text-info fw-bold">
-                  When do I receive my order?
-                </span>
+                <span className="text-info ">When do I receive my order?</span>
               </Accordion.Header>
               <Accordion.Body className="text-secondary">
                 When placing the order, a day of shipment is indicated. After

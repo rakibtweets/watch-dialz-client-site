@@ -9,7 +9,9 @@ const Contact = () => {
   return (
     <section className="mt-5 pb-5">
       <Container className="w-75 pb-5">
-        <h2 className="fw-bold text-center text-info my-5">Contact Us</h2>
+        <Fade bottom>
+          <h2 className="fw-bold text-center text-info my-5">Contact Us</h2>
+        </Fade>
         <Row xs={1} md={2} lg={2} className=" g-4 mt-5">
           <Col
             className=" d-flex justify-content-center justify-content-lg-start
