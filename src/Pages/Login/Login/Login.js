@@ -28,7 +28,7 @@ const Login = () => {
   return (
     <>
       <div className="container-fluid text-center">
-        <div className="container mt-5  mx-auto bg-light">
+        <div className="container pt-5  mx-auto bg-light">
           <form
             className=" d-block d-flex flex-column mx-auto px-5 w-75 pb-3 text-center"
             onSubmit={handleSubmit(onSubmit)}

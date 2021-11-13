@@ -2,7 +2,7 @@ import React from 'react';
 import { Spinner } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc';
-import { useHistory } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
 import useAuth from '../../Hooks/useAuth';
@@ -11,6 +11,11 @@ import './Register.css';
 const Register = () => {
   const { signWithGoogle, registerNewUser, authError, isLoading } = useAuth();
   const history = useHistory();
+  const location = useLocation();
+
+  const handleGoogleSignIn = () => {
+    signWithGoogle(location, history);
+  };
   const {
     register,
     handleSubmit,
@@ -28,13 +33,13 @@ const Register = () => {
   };
   return (
     <>
-      <div className=" h-100">
-        <div className="container mt-5  mx-auto bg-light">
+      <div className="h-100 register-banner">
+        <div className="container pt-5  mx-auto bg-transparent ">
           <form
             className="d-block d-flex flex-column mx-auto px-5 w-75 pb-3 "
             onSubmit={handleSubmit(onSubmit)}
           >
-            <h2 className="text-center fw-bold py-4">Registrater</h2>
+            <h2 className="text-center fw-bold py-4 text-info">Register</h2>
             {isLoading ? (
               <Spinner
                 className="container-fluid text-center"
@@ -98,7 +103,7 @@ const Register = () => {
                 >
                   Register
                 </button>
-                <p className="py-3 text-center">
+                <p className="py-3 text-center text-white">
                   All ready have an account?{' '}
                   <Link to="/login">Please Login</Link>
                 </p>
@@ -106,8 +111,11 @@ const Register = () => {
             )}
           </form>
           <div className="media-login  d-block d-flex flex-column mx-auto px-5 w-75 pb-5 ">
-            <h4 className="text-center fw-bold text-success">OR</h4>
-            <button onClick={signWithGoogle} className="btn google-btn py-2">
+            <h4 className="text-center fw-bold text-info">OR</h4>
+            <button
+              onClick={handleGoogleSignIn}
+              className="btn google-btn py-2"
+            >
               <FcGoogle className="fs-3 me-2" /> Login With Google
             </button>
           </div>
