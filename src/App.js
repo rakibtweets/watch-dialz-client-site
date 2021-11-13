@@ -14,6 +14,7 @@ import OrderProducts from './Pages/OrderProducts/OrderProducts';
 import Contact from './Pages/Contact/Contact';
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import Footer from './Pages/Shared/Footer/Footer';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -60,6 +61,9 @@ function App() {
               <Navigation />
               <Register />
               <Footer />
+            </Route>
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </Router>
