@@ -22,7 +22,6 @@ const MakeAdmin = () => {
       .then((data) => {
         if (data.modifiedCount) {
           swal('Added Admin', 'You made admin Successfully', 'success');
-          console.log(data);
         }
       });
 

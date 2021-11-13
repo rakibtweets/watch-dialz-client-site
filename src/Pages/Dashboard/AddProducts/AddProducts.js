@@ -10,7 +10,6 @@ const AddProducts = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log('~ data', data);
     // posting data
     fetch('https://fast-basin-80708.herokuapp.com/allWatches', {
       method: 'POST',
@@ -102,10 +101,12 @@ const AddProducts = () => {
         <br />
         {errors.exampleRequired && <span>This field is required</span>}
         <br />
-        <input
+        <button
           className="btn btn-primary text-uppercase container-fluid px-5"
           type="submit"
-        />
+        >
+          Add Product
+        </button>
       </form>
     </div>
   );

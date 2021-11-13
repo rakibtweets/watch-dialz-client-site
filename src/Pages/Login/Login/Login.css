@@ -13,3 +13,19 @@
 .google-btn:hover {
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25);
 }
+.login-content {
+  padding: 2em 1em;
+  background-color: rgba(0, 0, 0, 0.568);
+  visibility: visible;
+  opacity: 1;
+}
+.banner-img {
+  background-image: url(https://cdn.shopify.com/s/files/1/0075/1832/2770/files/slider__2_2000x.jpg?v=1559288774);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  width: 100%;
+  opacity: 1;
+  visibility: inherit;
+  z-index: 20;
+}

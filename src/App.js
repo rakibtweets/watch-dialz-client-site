@@ -14,7 +14,6 @@ import OrderProducts from './Pages/OrderProducts/OrderProducts';
 import Contact from './Pages/Contact/Contact';
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import Footer from './Pages/Shared/Footer/Footer';
-import LoginBanner from './Pages/Login/LoginBanner/LoginBanner';
 
 function App() {
   return (
@@ -44,7 +43,6 @@ function App() {
             </PrivateRoute>
             <Route path="/login">
               <Navigation />
-              <LoginBanner />
               <Login />
               <Footer />
             </Route>

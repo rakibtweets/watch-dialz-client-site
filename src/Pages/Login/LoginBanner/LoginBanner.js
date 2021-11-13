@@ -7,6 +7,7 @@ const LoginBanner = () => {
       <h1 className=" d-flex justify-content-start align-items-center container ps-5 h-100 py-4 fw-bold text-info">
         Login
       </h1>
+      
     </div>
   );
 };

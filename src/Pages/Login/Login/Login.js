@@ -27,10 +27,10 @@ const Login = () => {
   };
   return (
     <>
-      <div className="container-fluid text-center">
-        <div className="container pt-5  mx-auto bg-light">
+      <div className="container-fluid text-center banner-img pb-5">
+        <div className="container pt-5  mx-auto bg-transparent ">
           <form
-            className=" d-block d-flex flex-column mx-auto px-5 w-75 pb-3 text-center"
+            className=" d-block d-flex flex-column mx-auto px-5 w-75 pb-3 text-center login-content text-white "
             onSubmit={handleSubmit(onSubmit)}
           >
             <h2 className="text-center py-3 fw-bold">Login</h2>

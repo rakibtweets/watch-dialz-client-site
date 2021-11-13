@@ -4,13 +4,13 @@ import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="mt-5">
       <Container fluid className=" bg-dark px-5">
         <Row
           xs={1}
           md={2}
           lg={3}
-          className="g-5 mt-5 d-flex justify-content-center align-items-center "
+          className="g-5 d-flex justify-content-center align-items-center "
         >
           <Col>
             <div className="footer-brand-info text-white p-3">
