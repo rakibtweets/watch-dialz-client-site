@@ -7,7 +7,7 @@ const AllWatches = () => {
   const [isloading, setIsloading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/allWatches')
+    fetch('https://fast-basin-80708.herokuapp.com/allWatches')
       .then((res) => res.json())
       .then((data) => {
         setWatches(data);

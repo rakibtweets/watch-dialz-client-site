@@ -7,7 +7,7 @@ const ManageAllOrders = () => {
   const [manageOders, setManageOrders] = useState([]);
   const [isUpdated, setIsUpdated] = useState(false);
   useEffect(() => {
-    fetch('http://localhost:5000/manageAllOrders')
+    fetch('https://fast-basin-80708.herokuapp.com/manageAllOrders')
       .then((res) => res.json())
       .then((data) => {
         setManageOrders(data);
@@ -24,7 +24,7 @@ const ManageAllOrders = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`http://localhost:5000/deleteOrders/${id}`, {
+        fetch(`https://fast-basin-80708.herokuapp.com/deleteOrders/${id}`, {
           method: 'DELETE',
           headers: {
             'content-type': 'application/json',
@@ -50,7 +50,7 @@ const ManageAllOrders = () => {
     const updatedOrder = manageOders.find((orderList) => orderList._id === id);
     updatedOrder.status = 'Approved';
 
-    fetch(`http://localhost:5000/manageAllOrders/${id}`, {
+    fetch(`https://fast-basin-80708.herokuapp.com/manageAllOrders/${id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',

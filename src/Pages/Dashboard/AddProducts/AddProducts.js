@@ -12,7 +12,7 @@ const AddProducts = () => {
   const onSubmit = (data) => {
     console.log('~ data', data);
     // posting data
-    fetch('http://localhost:5000/allWatches', {
+    fetch('https://fast-basin-80708.herokuapp.com/allWatches', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

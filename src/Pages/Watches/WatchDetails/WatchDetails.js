@@ -7,7 +7,7 @@ const WatchDetails = () => {
   const [watch, setWatch] = useState({});
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:5000/watch/${id}`)
+    fetch(`https://fast-basin-80708.herokuapp.com/watch/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

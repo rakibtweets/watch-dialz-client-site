@@ -5,7 +5,7 @@ import SingleReview from '../SingleReview/SingleReview';
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/user/review')
+    fetch('https://fast-basin-80708.herokuapp.com/user/review')
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -21,10 +21,7 @@ const Reviews = () => {
       <div className="single-reviewer container">
         <Carousel cols={3} rows={1} gap={10} loop>
           {reviews.map((review) => (
-            <Carousel.Item
-              key={review?._id}
-              className="px-2"
-            >
+            <Carousel.Item key={review?._id} className="px-2">
               {' '}
               <SingleReview key={review?._id} review={review} />
             </Carousel.Item>

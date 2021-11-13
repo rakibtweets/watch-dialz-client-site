@@ -9,7 +9,7 @@ const MyOrders = () => {
   const [myOders, setMyOrders] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/myBuyingList/${user?.email}`;
+    const url = `https://fast-basin-80708.herokuapp.com/myBuyingList/${user?.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -28,7 +28,7 @@ const MyOrders = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`http://localhost:5000/deleteOrders/${id}`, {
+        fetch(`https://fast-basin-80708.herokuapp.com/deleteOrders/${id}`, {
           method: 'DELETE',
           headers: {
             'content-type': 'application/json',

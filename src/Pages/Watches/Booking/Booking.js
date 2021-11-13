@@ -10,7 +10,7 @@ const Booking = () => {
   const [watch, setWatch] = useState({});
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:5000/watch/${id}`)
+    fetch(`https://fast-basin-80708.herokuapp.com/watch/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setWatch(data);
@@ -27,13 +27,16 @@ const Booking = () => {
     data.status = 'Pending';
     data.watch = watch;
     console.log(data);
-    fetch(`http://localhost:5000/myBuyingList/${user?.email}`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      `https://fast-basin-80708.herokuapp.com/myBuyingList/${user?.email}`,
+      {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {

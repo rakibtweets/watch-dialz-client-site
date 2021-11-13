@@ -19,7 +19,7 @@ const UserReviews = () => {
   const onSubmit = (data) => {
     data.rating = rating;
 
-    fetch('http://localhost:5000/user/review', {
+    fetch('https://fast-basin-80708.herokuapp.com/user/review', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
