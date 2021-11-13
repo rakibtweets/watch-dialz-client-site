@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="mt-5">
-      <Container fluid className=" bg-dark px-5">
+    <footer className="mt-5  bg-dark ">
+      <Container fluid className="px-5">
         <Row
           xs={1}
           md={2}
@@ -76,6 +76,9 @@ const Footer = () => {
             </div>
           </Col>
         </Row>
+        <div className="copy-right text-center text-white py-2">
+          <p>&copy; 2021 Watch Dialz. Designd By Rakib Hasan.</p>
+        </div>
       </Container>
     </footer>
   );

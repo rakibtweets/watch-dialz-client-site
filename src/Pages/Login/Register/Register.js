@@ -33,13 +33,13 @@ const Register = () => {
   };
   return (
     <>
-      <div className="h-100 register-banner pb-5">
-        <div className="container pt-5  mx-auto bg-transparent ">
+      <div className="h-100 register-banner pb-5 ">
+        <div className="container pt-5  mx-auto  bg-transparent">
           <form
             className="d-block d-flex flex-column mx-auto px-5 w-75 pb-3 login-content"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <h2 className="text-center fw-bold py-4 text-info">Register</h2>
+            <h2 className="text-center fw-bold py-4 text-white">Register</h2>
             {isLoading ? (
               <Spinner
                 className="container-fluid text-center"
