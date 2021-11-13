@@ -15,6 +15,7 @@ import Contact from './Pages/Contact/Contact';
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import Footer from './Pages/Shared/Footer/Footer';
 import NotFound from './Pages/NotFound/NotFound';
+import Faq from './Pages/Faq/Faq';
 
 function App() {
   return (
@@ -37,6 +38,11 @@ function App() {
             <Route path="/contact">
               <Navigation />
               <Contact />
+              <Footer />
+            </Route>
+            <Route path="/faq">
+              <Navigation />
+              <Faq />
               <Footer />
             </Route>
             <PrivateRoute path="/dashboard">

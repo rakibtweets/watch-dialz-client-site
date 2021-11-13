@@ -35,6 +35,9 @@ const Navigation = () => {
               <Nav.Link as={Link} to="/contact">
                 Contact
               </Nav.Link>
+              <Nav.Link as={Link} to="/faq">
+                Faq
+              </Nav.Link>
               {user.email && (
                 <Nav.Link as={Link} to="/dashboard">
                   Dashboard
