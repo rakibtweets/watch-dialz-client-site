@@ -19,7 +19,30 @@ const Reviews = () => {
 
       {/* carousel start */}
       <div className="single-reviewer container">
-        <Carousel cols={3} rows={1} gap={10} loop>
+        <Carousel
+          cols={3}
+          rows={1}
+          gap={10}
+          loop
+          responsiveLayout={[
+            {
+              breakpoint: 1200,
+              cols: 3,
+            },
+            {
+              breakpoint: 992,
+              cols: 2,
+            },
+            {
+              breakpoint: 768,
+              cols: 2,
+            },
+            {
+              breakpoint: 576,
+              cols: 1,
+            },
+          ]}
+        >
           {reviews.map((review) => (
             <Carousel.Item key={review?._id} className="px-2">
               {' '}
