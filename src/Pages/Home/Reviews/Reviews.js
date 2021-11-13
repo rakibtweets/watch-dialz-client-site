@@ -21,7 +21,10 @@ const Reviews = () => {
       <div className="single-reviewer container">
         <Carousel cols={3} rows={1} gap={10} loop>
           {reviews.map((review) => (
-            <Carousel.Item key={review?._id} className="px-2">
+            <Carousel.Item
+              key={review?._id}
+              className="px-2"
+            >
               {' '}
               <SingleReview key={review?._id} review={review} />
             </Carousel.Item>

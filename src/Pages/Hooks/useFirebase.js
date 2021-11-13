@@ -10,6 +10,7 @@ import {
   updateProfile,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
+import swal from 'sweetalert';
 
 initializeFirebase();
 
@@ -44,6 +45,7 @@ const useFirebase = () => {
   // Register new user
 
   const registerNewUser = (name, email, password, history) => {
+    setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         // Signed in
@@ -53,9 +55,10 @@ const useFirebase = () => {
 
         // save user to database
         saveUser(email, name, 'POST');
-        history.push('/home');
+        // history.push('/home');
         //Auth Erros
         setAuthError('');
+
         // send name to firebase after creation
         updateProfile(auth.currentUser, {
           displayName: name,
@@ -67,13 +70,17 @@ const useFirebase = () => {
             // An error occurred
           });
         if (result) {
-          alert('Registration Successfull');
+          swal('Registration Successfull', 'Please Login', 'success');
+          userLogOut();
+          history.push('/login');
         }
       })
       .catch((error) => {
+        console.log(error.message);
         const errorMessage = error.message;
         setAuthError(errorMessage);
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   // login existing user

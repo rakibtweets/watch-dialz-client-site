@@ -1,14 +1,16 @@
 import React from 'react';
 import './Login.css';
 import { useForm } from 'react-hook-form';
-import Navigation from '../../Shared/Navigation/Navigation';
 import useAuth from '../../Hooks/useAuth';
 import { useHistory, useLocation } from 'react-router';
+import { FcGoogle } from 'react-icons/fc';
+import { Spinner } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const location = useLocation();
   const history = useHistory();
-  const { signWithGoogle, loginUser } = useAuth();
+  const { signWithGoogle, loginUser, authError, isLoading } = useAuth();
 
   const handleGoogleSignIn = () => {
     signWithGoogle(location, history);
@@ -23,43 +25,70 @@ const Login = () => {
     const { email, password } = data;
     loginUser(email, password, location, history);
   };
-  console.log(errors);
   return (
     <>
-      <div>
-        <Navigation />
-      </div>
-      <div className="container container-md container-lg form-area mt-5  mx-auto">
-        <form
-          className="d-block d-flex flex-column mx-auto w-75 p-5 "
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <h2 className="text-center">Login</h2>
+      <div className="container-fluid text-center">
+        <div className="container mt-5  mx-auto bg-light">
+          <form
+            className=" d-block d-flex flex-column mx-auto px-5 w-75 pb-3 text-center"
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <h2 className="text-center py-3 fw-bold">Login</h2>
+            {isLoading ? (
+              <Spinner
+                className="container-fluid text-center"
+                animation="border"
+                variant="danger"
+                size="5em"
+              />
+            ) : (
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="form-control form-control-lg  form-control-md"
+                  {...register('email', {
+                    required: true,
+                    pattern: /^\S+@\S+$/i,
+                  })}
+                />
+                <br />
 
-          <input
-            type="email"
-            placeholder="Email"
-            className="form-control form-control-lg  form-control-md"
-            {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
-          />
-          <br />
-          <input
-            type="password"
-            placeholder="Enter Password"
-            className="form-control form-control-lg  form-control-md "
-            {...register('password', { required: true, maxLength: 80 })}
-          />
-          <br />
+                <input
+                  type="password"
+                  placeholder="Enter Password"
+                  className="form-control form-control-lg  form-control-md "
+                  {...register('password', { required: true, maxLength: 80 })}
+                />
+                <br />
 
-          <button className="btn btn-primary" type="submit">
-            Login
-          </button>
-        </form>
-        <div className="media-login  d-block d-flex flex-column mx-auto px-5 w-75 ">
-          <h4 className="text-center">Or</h4>
-          <button onClick={handleGoogleSignIn} className="btn google-btn py-2">
-            Login With Google
-          </button>
+                {errors.password && (
+                  <span className="text-danger">This field is required</span>
+                )}
+                <br />
+                {authError && (
+                  <span className="text-danger py-3">{authError}</span>
+                )}
+
+                <button className="btn btn-primary w-100" type="submit">
+                  Login
+                </button>
+                <p className="py-3 text-center">
+                  Don't have an account?{' '}
+                  <Link to="/register">Create an Account</Link>
+                </p>
+              </div>
+            )}
+          </form>
+          <div className="media-login  d-block d-flex flex-column mx-auto px-5 w-75 pb-5">
+            <h4 className="text-center fw-bold text-success">OR</h4>
+            <button
+              onClick={handleGoogleSignIn}
+              className="btn google-btn py-2"
+            >
+              <FcGoogle className="fs-3 me-2" /> Sign In With Google
+            </button>
+          </div>
         </div>
       </div>
     </>

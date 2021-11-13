@@ -7,7 +7,7 @@ import UserAvatar from 'react-user-avatar';
 const SingleReview = (props) => {
   const { userReview, reviweText, rating } = props.review;
   return (
-    <div className="reviewer p-2 d-inline-block d-lg-flex">
+    <div className="reviewer p-2 d-block d-lg-flex">
       <Card className="p-2 reviewer-card">
         <div className="w-100 my-3 d-flex justify-content-center align-items-center">
           <UserAvatar

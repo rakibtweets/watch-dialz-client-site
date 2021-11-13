@@ -32,14 +32,6 @@ const Navigation = () => {
                 Watches
               </Nav.Link>
 
-              <Nav.Link as={Link} to="/Services">
-                Services
-              </Nav.Link>
-
-              <Nav.Link as={Link} to="/about">
-                About
-              </Nav.Link>
-
               <Nav.Link as={Link} to="/contact">
                 Contact
               </Nav.Link>
@@ -56,7 +48,7 @@ const Navigation = () => {
                   Login
                 </Nav.Link>
                 <Nav.Link
-                  className="btn btn-info text-white rounded-pill px-3 py-2"
+                  className="btn btn-info text-white rounded-pill px-3 py-2 mx-2"
                   as={Link}
                   to="/register"
                 >
@@ -65,14 +57,16 @@ const Navigation = () => {
               </Nav>
             ) : (
               <Nav className="text-center d-lg-flex align-items-lg-center">
-                <Nav.Link className="text-secondary fw-bold mx-2">
+                <Nav.Link className="text-black fw-bold mx-2">
                   {user?.displayName}{' '}
                 </Nav.Link>
-                <UserAvatar
-                  className="text-white mx-auto"
-                  size="50"
-                  name={user?.displayName}
-                />
+                {user?.displayName && (
+                  <UserAvatar
+                    className="text-white mx-auto"
+                    size="50"
+                    name={user?.displayName}
+                  />
+                )}
                 <Nav.Link>
                   <button
                     onClick={userLogOut}

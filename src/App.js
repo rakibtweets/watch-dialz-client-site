@@ -42,7 +42,9 @@ function App() {
               <Dashboard />
             </PrivateRoute>
             <Route path="/login">
+              <Navigation />
               <Login />
+              <Footer />
             </Route>
             <Route path="/addProducts">
               <AddProducts />
@@ -55,7 +57,9 @@ function App() {
               <Footer />
             </PrivateRoute>
             <Route path="/register">
+              <Navigation />
               <Register />
+              <Footer />
             </Route>
           </Switch>
         </Router>

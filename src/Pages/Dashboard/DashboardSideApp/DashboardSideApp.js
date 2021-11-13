@@ -8,7 +8,7 @@ import './DashboardSideApp.css';
 
 const DashboardSideApp = ({ url }) => {
   const [open, setOpen] = useState(false);
-  const { admin } = useAuth();
+  const { user, admin, userLogOut } = useAuth();
 
   const handleToggle = () => setOpen(!open);
 
@@ -22,8 +22,8 @@ const DashboardSideApp = ({ url }) => {
       <Collapse in={open}>
         <Drawer.Overflow>
           <Drawer.ToC className="dashboard-drawer fw-bold">
-            <Nav.Link as={Link} to="/watches">
-              Watches
+            <Nav.Link as={Link} to="/home">
+              Home
             </Nav.Link>
 
             <Drawer.Nav>
@@ -57,6 +57,19 @@ const DashboardSideApp = ({ url }) => {
                   </Nav.Link>
                 </Nav>
               )}
+              <Nav className="d-flex flex-column justify-content-center">
+                <Nav.Link className="text-secondary fw-bold mx-2">
+                  {user?.displayName}{' '}
+                </Nav.Link>
+                <Nav.Link>
+                  <button
+                    onClick={userLogOut}
+                    className="btn btn-danger text-white rounded-pill px-5 py-2"
+                  >
+                    Log Out
+                  </button>
+                </Nav.Link>
+              </Nav>
             </Drawer.Nav>
           </Drawer.ToC>
         </Drawer.Overflow>
