@@ -4,9 +4,9 @@ import { Redirect, Route } from 'react-router';
 import useAuth from '../../Hooks/useAuth';
 
 const AdminRoute = ({ children, ...rest }) => {
-  const { user, isLoading, admin } = useAuth();
+  const { user, admin } = useAuth();
 
-  if (isLoading) {
+  if (!admin) {
     return (
       <div className="w-25 mx-auto">
         <Spinner animation="grow" variant="danger" size="4em" />
