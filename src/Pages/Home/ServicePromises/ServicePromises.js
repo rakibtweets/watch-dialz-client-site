@@ -31,7 +31,8 @@ const ServicePromises = () => {
                 <div className="service-info text-center p-2">
                   <h5 className="text-info fw-bold">On Time Dellivey</h5>
                   <p className="text-secondary">
-                    We Promise to Deliver Our products on Time
+                    We Promise to Deliver Our products on Time,We also provide
+                    free delivery
                   </p>
                 </div>
               </Card>
@@ -47,9 +48,10 @@ const ServicePromises = () => {
                   />
                 </div>
                 <div className="service-info text-center p-2">
-                  <h5 className="text-info fw-bold">OnLine Support</h5>
+                  <h5 className="text-info fw-bold">Onine Support</h5>
                   <p className="text-secondary">
-                    We Give You 24 hrs on line support
+                    We Give You 24 hrs on line support,If any support needed we
+                    will keep in touch
                   </p>
                 </div>
               </Card>
