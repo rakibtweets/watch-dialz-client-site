@@ -6,7 +6,12 @@ const Footer = () => {
   return (
     <footer>
       <Container fluid className=" bg-dark px-5">
-        <Row xs={1} md={2} lg={3} className="g-5 mt-5 justify-content-center">
+        <Row
+          xs={1}
+          md={2}
+          lg={3}
+          className="g-5 mt-5 d-flex justify-content-center align-items-center "
+        >
           <Col>
             <div className="footer-brand-info text-white p-3">
               <h3 className="brand-name fw-bold text-white">
@@ -17,7 +22,7 @@ const Footer = () => {
                 WatchDial is a watch company that has collection of all top
                 brands watch,with high quality services
               </p>
-              <div className="footer-logo-icon d-flex w-auto gap-3">
+              <div className="footer-logo-icon d-flex  justify-content-around w-75 gap-2">
                 <i className="fab fa-facebook fa-2x"></i>
                 <i className="fab fa-instagram fa-2x"></i>
                 <i className="fab fa-twitter fa-2x"></i>
@@ -26,8 +31,8 @@ const Footer = () => {
             </div>
           </Col>
 
-          <Col className="d-none d-md-block">
-            <div className="about-links">
+          <Col className="">
+            <div className="about-links text-sm-center">
               <h4 className="text-white">Page Links</h4>
               <div className="other-links">
                 <NavLink className="nav-link text-white" to="/home">
