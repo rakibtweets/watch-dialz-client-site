@@ -24,7 +24,7 @@ const Watch = (props) => {
             <h5 className=" text-success fw-bold">{modelName}</h5>
             <h6 className=" text-secondary fw-bold">{brand}</h6>
             <div className="d-flex justify-content-between px-2">
-              <h5 className=" fw-bold"> $ {pricing}</h5>
+              <h5 className=" fw-bold text-success"> $ {pricing}</h5>
               <h5 className=" fw-bold text-secondary"> {availability}</h5>
             </div>
             <p className="small text-secondary py-2">
