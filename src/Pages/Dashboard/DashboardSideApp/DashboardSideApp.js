@@ -55,6 +55,9 @@ const DashboardSideApp = ({ url }) => {
                   <Nav.Link as={Link} to={`${url}/makeAdmin`}>
                     Make Admin
                   </Nav.Link>
+                  <Nav.Link as={Link} to={`${url}/payment`}>
+                    Payment
+                  </Nav.Link>
                 </Nav>
               )}
               <Nav className="d-flex flex-column justify-content-center">
