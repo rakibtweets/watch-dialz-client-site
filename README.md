@@ -28,7 +28,7 @@
 - [Private Route redirecting using in the project](#react-private-route)
 - [Header and footer section fixed on every pages](#header-footer)
 - [All Core features on the company has shown in home page](#features)
-- [All Travel destination are shown in different route also](#different-route)
+- [Product details are shown in different route also](#different-route)
 - [User can delete their bookings](#different-route)
 - [User can review their exprience of buying our procuts and shown in the home page](#different-route)
 - [Admin Can see and approve all the travel list in Manange all products](#admin-route)
