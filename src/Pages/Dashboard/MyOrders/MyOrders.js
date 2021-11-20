@@ -13,7 +13,6 @@ const MyOrders = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setMyOrders(data);
       });
   }, [user?.email]);
