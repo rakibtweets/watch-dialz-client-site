@@ -10,7 +10,7 @@ const Booking = () => {
   const [watch, setWatch] = useState({});
   const { id } = useParams();
   useEffect(() => {
-    fetch(`https://fast-basin-80708.herokuapp.com/watch/${id}`)
+    fetch(`https://watch-dialz-server.vercel.app/watch/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setWatch(data);
@@ -21,22 +21,19 @@ const Booking = () => {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors }
   } = useForm();
   const onSubmit = (data) => {
     data.status = 'Pending';
     data.watch = watch;
     console.log(data);
-    fetch(
-      `https://fast-basin-80708.herokuapp.com/myBuyingList/${user?.email}`,
-      {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      }
-    )
+    fetch(`https://watch-dialz-server.vercel.app/${user?.email}`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {

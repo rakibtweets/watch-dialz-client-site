@@ -11,12 +11,12 @@ const MakeAdmin = () => {
 
   const handleAdminSubmit = (e) => {
     const user = { email };
-    fetch('https://fast-basin-80708.herokuapp.com/users/admin', {
+    fetch('https://watch-dialz-server.vercel.app/users/admin', {
       method: 'PUT',
       headers: {
-        'content-type': 'application/json',
+        'content-type': 'application/json'
       },
-      body: JSON.stringify(user),
+      body: JSON.stringify(user)
     })
       .then((res) => res.json())
       .then((data) => {
@@ -34,7 +34,7 @@ const MakeAdmin = () => {
         style={{
           background: '#FFFFF',
           boxShadow: '0 0 5px 0 gray',
-          marginBottom: '4em',
+          marginBottom: '4em'
         }}
       >
         <h4 className="fw-bold text-center py-4">

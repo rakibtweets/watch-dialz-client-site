@@ -7,7 +7,7 @@ const WatchDetails = () => {
   const [watch, setWatch] = useState({});
   const { id } = useParams();
   useEffect(() => {
-    fetch(`https://fast-basin-80708.herokuapp.com/watch/${id}`)
+    fetch(`https://watch-dialz-server.vercel.app/watch/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

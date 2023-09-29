@@ -7,16 +7,16 @@ const AddProducts = () => {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors }
   } = useForm();
   const onSubmit = (data) => {
     // posting data
-    fetch('https://fast-basin-80708.herokuapp.com/allWatches', {
+    fetch('https://watch-dialz-server.vercel.app/allWatches', {
       method: 'POST',
       headers: {
-        'content-type': 'application/json',
+        'content-type': 'application/json'
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(data)
     })
       .then((res) => res.json())
       .then((result) => {
@@ -33,7 +33,7 @@ const AddProducts = () => {
         style={{
           background: '#FFFFF',
           boxShadow: '0 0 5px 0 gray',
-          marginBottom: '4em',
+          marginBottom: '4em'
         }}
       >
         <h4 className="fw-bold text-center py-4">

@@ -6,7 +6,7 @@ import Fade from 'react-reveal/Fade';
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch('https://fast-basin-80708.herokuapp.com/user/review')
+    fetch('https://watch-dialz-server.vercel.app/user/review')
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -30,20 +30,20 @@ const Reviews = () => {
           responsiveLayout={[
             {
               breakpoint: 1200,
-              cols: 3,
+              cols: 3
             },
             {
               breakpoint: 992,
-              cols: 2,
+              cols: 2
             },
             {
               breakpoint: 768,
-              cols: 2,
+              cols: 2
             },
             {
               breakpoint: 576,
-              cols: 1,
-            },
+              cols: 1
+            }
           ]}
         >
           {reviews.map((review) => (

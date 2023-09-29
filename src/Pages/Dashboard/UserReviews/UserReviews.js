@@ -14,17 +14,17 @@ const UserReviews = () => {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors }
   } = useForm();
   const onSubmit = (data) => {
     data.rating = rating;
 
-    fetch('https://fast-basin-80708.herokuapp.com/user/review', {
+    fetch('https://watch-dialz-server.vercel.app/user/review', {
       method: 'POST',
       headers: {
-        'content-type': 'application/json',
+        'content-type': 'application/json'
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(data)
     })
       .then((res) => res.json())
       .then((result) => {

@@ -7,7 +7,7 @@ const ManageAllOrders = () => {
   const [manageOders, setManageOrders] = useState([]);
   const [isUpdated, setIsUpdated] = useState(false);
   useEffect(() => {
-    fetch('https://fast-basin-80708.herokuapp.com/manageAllOrders')
+    fetch('https://watch-dialz-server.vercel.app/manageAllOrders')
       .then((res) => res.json())
       .then((data) => {
         setManageOrders(data);
@@ -21,14 +21,14 @@ const ManageAllOrders = () => {
       text: 'Your Order You will be deleted',
       icon: 'warning',
       buttons: true,
-      dangerMode: true,
+      dangerMode: true
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`https://fast-basin-80708.herokuapp.com/deleteOrders/${id}`, {
+        fetch(`https://watch-dialz-server.vercel.app/deleteOrders/${id}`, {
           method: 'DELETE',
           headers: {
-            'content-type': 'application/json',
-          },
+            'content-type': 'application/json'
+          }
         })
           .then((res) => res.json())
           .then((data) => {
@@ -50,12 +50,12 @@ const ManageAllOrders = () => {
     const updatedOrder = manageOders.find((orderList) => orderList._id === id);
     updatedOrder.status = 'Approved';
 
-    fetch(`https://fast-basin-80708.herokuapp.com/manageAllOrders/${id}`, {
+    fetch(`https://watch-dialz-server.vercel.app/manageAllOrders/${id}`, {
       method: 'PUT',
       headers: {
-        'content-type': 'application/json',
+        'content-type': 'application/json'
       },
-      body: JSON.stringify(updatedOrder),
+      body: JSON.stringify(updatedOrder)
     })
       .then((res) => res.json())
       .then((data) => {

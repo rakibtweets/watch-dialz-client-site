@@ -9,7 +9,7 @@ const MyOrders = () => {
   const [myOders, setMyOrders] = useState([]);
 
   useEffect(() => {
-    const url = `https://fast-basin-80708.herokuapp.com/myBuyingList/${user?.email}`;
+    const url = `https://watch-dialz-server.vercel.app/${user?.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -24,14 +24,14 @@ const MyOrders = () => {
       text: 'Your Booking You will be deleted',
       icon: 'warning',
       buttons: true,
-      dangerMode: true,
+      dangerMode: true
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`https://fast-basin-80708.herokuapp.com/deleteOrders/${id}`, {
+        fetch(`https://watch-dialz-server.vercel.app/deleteOrders/${id}`, {
           method: 'DELETE',
           headers: {
-            'content-type': 'application/json',
-          },
+            'content-type': 'application/json'
+          }
         })
           .then((res) => res.json())
           .then((data) => {

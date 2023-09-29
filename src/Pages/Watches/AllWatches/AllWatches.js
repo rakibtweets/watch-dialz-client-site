@@ -8,13 +8,14 @@ const AllWatches = () => {
   const [isloading, setIsloading] = useState(true);
 
   useEffect(() => {
-    fetch('https://fast-basin-80708.herokuapp.com/allWatches')
+    fetch('https://watch-dialz-server.vercel.app/allWatches')
       .then((res) => res.json())
       .then((data) => {
         setWatches(data);
         setIsloading(false);
       });
   }, [isloading]);
+
   return (
     <>
       <div className="text-center pb-5">

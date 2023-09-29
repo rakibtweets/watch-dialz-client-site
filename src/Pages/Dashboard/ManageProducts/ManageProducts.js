@@ -7,7 +7,7 @@ const ManageProducts = () => {
   const [isloading, setIsloading] = useState(true);
 
   useEffect(() => {
-    fetch('https://fast-basin-80708.herokuapp.com/allWatches')
+    fetch('https://watch-dialz-server.vercel.app/allWatches')
       .then((res) => res.json())
       .then((data) => {
         setWatches(data);
@@ -23,14 +23,14 @@ const ManageProducts = () => {
       text: 'Your Order You will be deleted',
       icon: 'warning',
       buttons: true,
-      dangerMode: true,
+      dangerMode: true
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`https://fast-basin-80708.herokuapp.com/deleteProduct/${id}`, {
+        fetch(`https://watch-dialz-server.vercel.app/deleteProduct/${id}`, {
           method: 'DELETE',
           headers: {
-            'content-type': 'application/json',
-          },
+            'content-type': 'application/json'
+          }
         })
           .then((res) => res.json())
           .then((data) => {

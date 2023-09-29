@@ -8,7 +8,7 @@ import {
   onAuthStateChanged,
   createUserWithEmailAndPassword,
   updateProfile,
-  signInWithEmailAndPassword,
+  signInWithEmailAndPassword
 } from 'firebase/auth';
 import swal from 'sweetalert';
 
@@ -61,7 +61,7 @@ const useFirebase = () => {
 
         // send name to firebase after creation
         updateProfile(auth.currentUser, {
-          displayName: name,
+          displayName: name
         })
           .then(() => {
             // Profile updated!
@@ -120,19 +120,19 @@ const useFirebase = () => {
   // save user information to database
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch('https://fast-basin-80708.herokuapp.com/users', {
+    fetch('https://watch-dialz-server.vercel.app/users', {
       method: method,
       headers: {
-        'content-type': 'application/json',
+        'content-type': 'application/json'
       },
-      body: JSON.stringify(user),
+      body: JSON.stringify(user)
     }).then();
   };
 
   // checking admin or not
 
   useEffect(() => {
-    fetch(`https://fast-basin-80708.herokuapp.com/users/${user?.email}`)
+    fetch(`https://watch-dialz-server.vercel.app/users/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setAdmin(data.admin);
@@ -161,7 +161,7 @@ const useFirebase = () => {
     signWithGoogle,
     userLogOut,
     registerNewUser,
-    loginUser,
+    loginUser
   };
 };
 
